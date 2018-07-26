@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+{%  load static %}
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+       Rastriya Beema Sansthan {%  block title %} {%  endblock title %}
+    </title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> {# Global stylesheets #}
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <!-- fontawesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/beema.css' %}"> {% block extra_css %} {# Override this in templates to add extra stylesheets #} {% endblock %}
+
+    <!-- materials fonts -->
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- jquery -->
+      <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- include navbar -->
+    {% include '_partials/navbar.html' %}
+    <!-- include content -->
+    {% block content %}{% endblock %}
+    <!-- include footer -->
+    {% include '_partials/footer.html' %}
+
+
+
+
+    {%  block script %}
+    <!-- Compiled and minified JavaScript of material -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/beema.js' %}"></script>
+    <!-- extra js goes here -->
+{%  endblock script %}
+
+</body>
+
+</html>

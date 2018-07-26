@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <div class="container">
+        <hr class="hr-divider">
+        <div class="row">
+            <div class="col s12 m3">
+                <!-- Download categories -->
+
+                <ul class="collection with-header">
+                    <li class="collection-header beema-blue"><h5 class=" text-uppercase beema-blue"><i
+                            class="fa fa-cloud-download" aria-hidden="true"></i> &nbsp;{% trans "Downloads" %} </h5>
+                    </li>
+                    {% for category in download_categories %}
+                        <li class="collection-item"><a class="beema-blue" href="{{ category.get_absolute_url }}">
+                            <i class="fa fa-arrow-circle-right red-text  " aria-hidden="true"></i>
+                            &nbsp;{{ category.category_name }}
+                        </a>
+                        </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+            <div class="col s12 m9">
+
+                <ul class="collection with-header">
+                    <li class="collection-header"><h5 class="beema-color">
+                        {{ download_categories.first }}
+
+                    </h5></li>
+                    {% for item in download_categories.last.downloads.all %}
+                        <li class="collection-item"><a href="{{ item.file.url }}"
+                                                       class="beema-color"><span>{{ forloop.counter }}. &nbsp;</span>&nbsp;{{ item.title }}
+                        </a>
+
+
+                        </li>
+
+                    {% endfor %}
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+
+    {{ block.super }}
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('#example').DataTable();
+            $('.dataTables_filter input').attr("placeholder", "Search files");
+        });
+
+    </script>
+
+{% endblock script %}

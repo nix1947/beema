@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+    <div class="container">
+        <hr class="hr-divider">
+        <div class="row">
+            <div class="col s12 m3">
+                <!-- Download categories -->
+
+                {% include 'career/career_sidebar.html' %}
+
+            </div>
+            <div class="col s12 m9">
+
+
+                <ul class="collection with-header">
+                    <li class="collection-header"><h5 class="beema-color">
+                        {{ title }}
+
+                    </h5></li>
+
+                    <div style="padding: 20px;">
+                         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for {{ title }}..">
+                    </div>
+                <ul id="myUL">
+                    {% for item in objects %}
+                        <li class="collection-item"><a href="{{ item.file.url }}"
+                                                       class="beema-color"><span>{{ forloop.counter }}. &nbsp;</span>&nbsp;{{ item.title }}
+                            <span class="grey-text pull-right">{%  trans "Published date" %}:{{ item.updated_date | naturalday }}</span>
+
+
+                        </a>
+
+
+                        </li>
+
+                    {% endfor %}
+                </ul>
+
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+{% endblock content %}
+
+{% block script %}
+
+    {{ block.super }}
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('#example').DataTable();
+            $('.dataTables_filter input').attr("placeholder", "Search files");
+        });
+
+    </script>
+
+{% endblock script %}

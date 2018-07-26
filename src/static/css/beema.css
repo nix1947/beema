@@ -1,0 +1,274 @@
+/*body 
+blue-color: #2980b9;
+green-color: #27ae60;
+
+*/
+body, html {
+    letter-spacing: 0.05rem;
+    margin-bottom:0px;
+}
+
+a {
+    outline: none !important;
+}
+
+i {
+    line-height: 0px !important;   
+}
+
+.beema-blue,
+.beema-color {
+    color: #2C57AB !important;
+}
+
+.container {
+    width: 85% !important;
+}
+
+
+/* Trust on brand homepage */
+.panel-height {
+    min-height: 362px !important;
+  }
+
+
+  .why-container h6, h5 {
+    color: grey;
+    font-weight: 500;
+  }
+
+  .why-container img {
+    display: block;
+    margin: auto auto;
+  }
+
+  .why-container p {
+    font-size: 2rem !important;
+    text-align: center !important;
+  }
+
+
+.top-hr{
+    height: 3px;
+    background: linear-gradient(90deg, #2980b9 0%, #2980b9 75%, #27ae60 75%, #27ae60 100%);
+    margin: 0 0 16px;
+    border: none;
+}
+
+.hr-divider {
+    height: 1px;
+    background: #eeeeee;
+    margin: 0 0 16px;
+    border: none;
+}
+
+
+/* top first navigation */
+.top-first-navigation{
+    font-size: 0.7rem !important;
+    font-weight:500;
+    color:#555555!important;
+    margin: 0px;
+}
+
+.top-first-navigation ul{
+    list-style: none;
+}
+
+.top-first-navigation > ul > li {
+    display: inline-block;
+}
+
+
+ul.top-first-navigation-right  li {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+ul.top-first-navigation-right  li a{
+   color: #555555;
+   text-transform: uppercase;
+   letter-spacing: 0.7px;
+}
+
+ul.top-first-navigation-right  li a:hover{
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    border-bottom: 2px solid #2980b9;
+    transition: 5ms ;
+ }
+
+ .bottom-navigation > nav {
+    box-shadow: none !important;
+    line-height: 40px !important;
+    height: 80px !important;
+ }
+
+
+
+ .bottom-navigation nav ul li a {
+     color: #555555 !important;
+     font-weight: 500;
+ }
+
+ .bottom-navigation nav ul li a:hover {
+    color: #2980b9 !important;
+    font-weight: 500;
+    border-bottom: 2px solid #2980b9;
+    
+}
+
+ .brand-logo {
+     margin-top:-5px;
+ }
+
+ .dropdown-content {
+     overflow-y: hidden !important;
+ }
+
+ /* notice section css */
+ .notice-section {
+    height: 40px !important;
+    background: #2980b9;
+    background: linear-gradient(to left,   #27ae60 75% ,  #2980b9 25%);
+    line-height: 30px !important;
+    color: #FFFFFF;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    font-size: 0.89rem;
+
+    
+ }
+
+.newsticker li  a{
+   color: #FFF !important;
+}
+
+.newsticker li >  a:hover{
+    color: lightcyan !important;
+ }
+
+.btn-beema {
+    background: #2555AF !important;
+}  
+ 
+
+.carousel-heading {
+    font-weight: 300 !important;
+    text-transform: capitalize !important;
+    margin-bottom: 40px;
+}
+.carousel-text {
+    font-weight: 300;
+    font-size: 1.1rem !important;
+    margin-bottom: 40px !important;
+    letter-spacing: 1px;
+    
+}
+
+
+.section-intro h5 {
+    font-weight: 500;
+    color:#2F58AA; 
+    
+
+}
+ 
+.section-intro p {
+    letter-spacing: 1px !important;
+    line-height: 24px;
+    color: #333333;
+    padding-top: 10px;
+    font-size: 1.1rem;
+}
+
+.newsticker li a {
+    padding:30px !important;
+}
+
+/* footer */
+
+.header-title {
+  text-transform: uppercase !important;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1F1F1F !important;
+  margin-bottom: -7px;
+  letter-spacing: 0.05rem;
+}
+
+.beema-section {
+  padding-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.beema-section > ul {
+    margin-top: 0px;
+}
+
+
+footer div.beema-section  ul li  a {
+    color: #454545;
+    font-size: 0.85rem;
+    margin-bottom: 0px;
+    letter-spacing: 0.05rem;
+    font-weight: 400;
+
+}
+
+footer div.beema-section  ul li  a:hover {
+    color:#2980b9;
+
+}
+
+
+
+.beema-section2 {
+    background-color:#2C57AB;
+    margin-top: -20px;
+    width: 100%;
+    margin-bottom: 0px;
+
+}
+
+.beema-section2 ul > li {
+    display: inline-block;
+    color: #FFF;
+    padding-right: 50px;
+    font-size: 0.9rem;
+    letter-spacing: 0.03rem;
+}
+
+.beema-section2 ul > li > a {
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.beema-section2 ul > li > a:hover {
+    color: #bbbbbb;
+}
+
+
+/* custom media queries */
+@media only screen and (max-width: 768px) {
+    .notice-section{
+        background-color: #000000 !important;
+    }
+}
+
+.media-section h5 {
+    font-size: 1.2rem !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.box {
+
+    border: 1px solid #eeeeee !important;
+    padding: 10px;
+}
+
+
