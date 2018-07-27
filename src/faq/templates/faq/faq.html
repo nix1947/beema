@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load humanize %}
+
+
+
+{% block content %}
+
+    <!-- help page stylesheet -->
+    <style>
+        .faqSearch {
+            border: 1px solid #dddddd !important;
+            border-radius: 30px !important;
+            height: 30px !important;
+            padding: 5px 10px !important;
+            margin-top: 20px !important;
+            background: #EFEFEF !important;
+
+        }
+
+        .faqSearch:focus:active {
+            border: 1px solid #FFFFFF !important;
+        }
+
+        .wrapper {
+            position: relative;
+        }
+
+        .wrapper i {
+            position: absolute;
+            top: 42px !important;
+            right: 5px !important;
+            color: #eeeeee !important;
+        }
+
+        .category-description {
+            max-width: 100%;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .faq-categories > ul {
+            border-left: 1.5px solid #eeeeee;
+            padding-left: 15px;
+        }
+
+        .faq-cat-active {
+            border-left: 3px solid #27ae60;
+            margin-left: -15px;
+            padding-left: 15px;
+
+        }
+
+
+
+
+
+
+    </style>
+
+
+    <hr class="hr-divider">
+
+    <div class="container">
+
+
+        <div class="row">
+
+
+            {% include 'faq/faq_sidebar.html' with objects=faq_categories %}
+
+            <div class="col s12 m9">
+                <div style="padding-left: 40px">
+                    <h5 style="margin-top: 18px" class="beema-color">{{ faq_category.title }} {% trans "Faq" %}</h5>
+                    <hr class="hr-divider">
+
+                    {% for faq in faq_category.faqs.all %}
+
+                        <h6 class="beema-color" style="font-weight: 400;">{{ forloop.counter }}.&nbsp;{{ faq.title }}</h6>
+                        <p style="margin-top:0px;  color:#666666">{{ faq.body }}</p>
+
+                        <p class="grey-text" style="margin-top: -15px; color:#666666;">
+                            {% trans "If you want to know more, please" %}
+                            <a href="/contact/" class="beema-color"
+                               style="text-decoration: underline">{% trans "Contact the company" %}</a></p>
+
+                        <hr class="hr-divider">
+
+                    {% endfor %}
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    
+    
+        <!-- social icons row -->
+        {%  include 'socials.html' %}
+
+
+    </div>
+
+
+{% endblock content %}

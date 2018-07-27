@@ -1,0 +1,29 @@
+{% load i18n %}
+<!-- sidebar -->
+<div class="col s12 m3">
+    <div style="padding-right: 20px;">
+        <div class="wrapper">
+            <input type="search" name="faqSearch" id="faqSearch" class="faqSearch"
+                   placeholder="{% trans "Search..." %}">
+            <i class="fa fa-search"></i>
+        </div>
+
+        <div class="faq-categories">
+            <ul>
+                {%  for object in objects %}
+
+
+
+                <li class="{%  if object.title == faq_category.title %}faq-cat-active {%  endif %}">
+
+                    <h6><a href="{{ object.get_absolute_url }}" class="beema-color">{{ object.title }}</a></h6>
+                    <p class="grey-text category-description" style="margin-top:0px">{{ object.body |truncatechars:100 }}</p>
+                </li>
+
+                {%  endfor %}
+
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- main faq page -->

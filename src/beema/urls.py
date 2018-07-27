@@ -28,6 +28,9 @@ urlpatterns = [
     path('downloads/', include('download.urls', namespace="download")),
     # Career
     path('career/', include('career.urls', namespace="career")),
+    # Faq page
+    path('faq/', include('faq.urls', namespace='faq'))
+
 
 
 
