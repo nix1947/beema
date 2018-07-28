@@ -17,7 +17,7 @@ class FaqCategories(TimeStampedModel):
 
 
     class Meta:
-        ordering = ('-updated_date',)
+        ordering = ('title',)
         verbose_name = "Faq Category"
         verbose_name_plural = "Faq Categories"
 

@@ -30,7 +30,9 @@
 <body>
 
     <!-- include navbar -->
+     {%  block navbar %}
     {% include '_partials/navbar.html' %}
+    {%  endblock navbar %}
     <!-- include content -->
     {% block content %}{% endblock %}
     <!-- include footer -->

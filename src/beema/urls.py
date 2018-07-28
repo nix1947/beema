@@ -29,7 +29,9 @@ urlpatterns = [
     # Career
     path('career/', include('career.urls', namespace="career")),
     # Faq page
-    path('faq/', include('faq.urls', namespace='faq'))
+    path('faq/', include('faq.urls', namespace='faq')),
+    # Contact page
+    path('contact/', home_views.contact, name="contact")
 
 
 
