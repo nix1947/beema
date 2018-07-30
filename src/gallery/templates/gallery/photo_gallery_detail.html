@@ -1,0 +1,43 @@
+{% extends 'gallery/gallery_base.html' %}
+{% load static %}
+{%  load i18n %}
+
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <hr class="hr-divider">
+            <h5 class="beema-color center" style="text-transform: uppercase">{{ gallery.gallery_name }} {%  trans "Photo gallery" %}</h5>
+            {% for photo in gallery.photos.all %}
+                <div class="col s12 m6" >
+                    <div style="border:1px solid #dddddd; padding:20px;">
+                        <a rel="gallery-1" href="{{ photo.photo.url }}" class="swipebox" title="{{ photo.caption }}">
+
+
+                            <img class="responsive-img" src="{{ photo.photo.url }}" alt="image">
+                            <hr class="hr-divider">
+                            <p class="beema-color center    ">{{ photo.caption }}</p>
+
+                    </a>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <script src="{% static 'lib/swipebox/js/jquery.swipebox.js' %}"></script>
+
+
+{% endblock content %}

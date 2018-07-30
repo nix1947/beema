@@ -44,12 +44,12 @@
             <nav>
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo">Rastriya Beema Sansthan</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i style="margin-top:20px;" class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="sass.html">About</a></li>
-                        <li><a href="badges.html">Products</a></li>
-                        <li><a href="collapsible.html">Blog</a></li>
-                        <li><a href="mobile.html">Contact</a></li>
+                        <li><a href="/about/">{%  trans "About" %}</a></li>
+                        <li><a href="/products/">{%  trans "Products" %}</a></li>
+                        <li><a href=/blog/">{%  trans "Blog" %}</a></li>
+                        <li><a href="/contact/">{% trans "Contact" %}</a></li>
                     </ul>
                 </div>
             </nav>
@@ -61,8 +61,11 @@
                 <li><a href="mobile.html">Contact</a></li>
             </ul>
 
-            <h3 class="white-text" style="margin-top:110px">Get in touch</h3>
-            <p>Get in touch with us</p>
+            <h3 class="white-text" style="margin-top:110px">{%  trans "Get in touch" %}</h3>
+            <p style="max-width: 600px;" class="grey-text  text-lighten-5">{%  blocktrans %}
+                 Feel free to contact us. Just write you Name, Phone no and send us a message. We will do verything  to respond quickly
+                {%  endblocktrans %}
+            </p>
 
 
         </div>
@@ -125,7 +128,7 @@
 
                 </div>
                 <div class="col s12 m5" style="background: #2980b9; color: #FFFFFF; min-height: 440px; padding:12px">
-                    <h6 style="text-align: center">{%  trans "Contact Information" %}</h6>
+                    <h6 style="font-weight: bold">{%  trans "Contact Information" %}</h6>
 
 
                     <style>
@@ -144,8 +147,8 @@
                     </style>
                     <div class="margin-top">
 
-                        <p> <i class="material-icons prefix">location_on</i>{%  trans "Ramshah path" %}</p>
-                         <p style="margin-left: 12px;">{%  trans "Kathmandu Nepal, RBS building" %}</p>
+                        <p> <i class="material-icons prefix">location_on</i>{%  trans "Ramshah Paath" %}</p>
+                         <p style="margin-left: 12px;">{%  trans "Kathmandu Nepal, RBS Building" %}</p>
 
                     </div>
 

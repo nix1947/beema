@@ -11,11 +11,15 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" /> {# Global stylesheets #}
 
+{%  block css %}
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <!-- fontawesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/beema.css' %}"> {% block extra_css %} {# Override this in templates to add extra stylesheets #} {% endblock %}
+
+    {%  endblock css %}
 
     <!-- materials fonts -->
      <!--Import Google Icon Font-->

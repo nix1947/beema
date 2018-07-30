@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'download',
     'career',
     'faq',
+    'gallery'
 ]
 
 MIDDLEWARE = [

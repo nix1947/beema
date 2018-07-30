@@ -1,0 +1,55 @@
+{% extends 'gallery/gallery_base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <hr class="hr-divider">
+            <h5 class="beema-color center"
+                style="text-transform: uppercase">{{ gallery.gallery_name }} {% trans "Video gallery" %}</h5>
+
+            {% for video in gallery.videos.all %}
+                <div class="col s12 m6">
+                    <div style="border:1px solid #dddddd; padding:20px; ">
+                        <a class="swipebox-video" rel="youtube" href="{{ video.video_url }}"
+                           title="{{ video.caption }}"
+                           style="position: relative;
+                                   display: block;
+                                   min-height: 250px;
+                                   background:linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1)),url('{{ video.thumbnail.url }}')">
+
+                            <i
+                                    style="position: absolute; top: 50%; left: 50%;"
+                                    class="fa fa-2x grey-text text-darken-2 fa-play-circle" aria-hidden="true"></i>
+                        </a>
+                        <p class="center beema-color">{{ video.caption }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <script src="{% static 'lib/swipebox/js/jquery.swipebox.js' %}"></script>
+
+
+    <script type="text/javascript">
+        ;(function ($) {
+
+            $('.swipebox-video').swipebox();
+
+        })(jQuery);
+    </script>
+
+
+
+{% endblock content %}

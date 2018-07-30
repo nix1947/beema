@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+    <hr class="hr-divider">
+    <div class="container">
+
+        <style>
+            .row-border {
+                border: 1px solid #eeeeee;
+                padding: 20px;
+            }
+
+            .text-capitalize {
+                text-transform: uppercase;
+            }
+
+
+
+
+
+        </style>
+
+
+        <div class="row row-border">
+            <h5 class="beema-color text-capitalize center h5-header"><i style="vertical-align: middle;"
+                                                              class=" small material-icons">photo</i>
+                &nbsp;{% trans "RBS Video Gallery" %}</h5>
+
+            <!-- photo galleries goes here -->
+            {% for gallery in galleries %}
+            <div class="col s12 m3">
+                <div class="card">
+                    <div class="card-image" style="">
+                        <img  class="overlay" src="{{ gallery.gallery_cover_photo.url }}" style="min-height: 180px; width: available;  background: rgba(39,62,84,0.82);   z-index: 2;">
+                        <span class="card-title grey-text text-dark" style="text-transform: uppercase">{{ gallery.gallery_name }}</span>
+                    </div>
+
+                    <div class="card-action">
+                        <a class="beema-color" href="{{ gallery.get_absolute_url }}">{% trans "View Gallery" %}</a>
+                    </div>
+                </div>
+            </div>
+            {%  endfor %}
+        </div>
+    </div>
+{% endblock content %}

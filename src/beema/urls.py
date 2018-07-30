@@ -31,7 +31,9 @@ urlpatterns = [
     # Faq page
     path('faq/', include('faq.urls', namespace='faq')),
     # Contact page
-    path('contact/', home_views.contact, name="contact")
+    path('contact/', home_views.contact, name="contact"),
+    # Gallery page
+    path('gallery/', include('gallery.urls', namespace='gallery'))
 
 
 
